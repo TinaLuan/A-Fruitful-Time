@@ -45,7 +45,7 @@ MonoBehaviour:
   m_MinSize: {x: 683, y: 492}
   m_MaxSize: {x: 14004, y: 14042}
   vertical: 0
-  controlID: 115
+  controlID: 9
 --- !u!114 &3
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -210,7 +210,7 @@ MonoBehaviour:
   m_MinSize: {x: 406, y: 492}
   m_MaxSize: {x: 10002, y: 14042}
   vertical: 1
-  controlID: 72
+  controlID: 10
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -356,19 +356,19 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
-    - Assets/Scripts/SceneScripts
+    - Assets/Scenes
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Scripts/SceneScripts
+  - Assets/Scenes
   m_LastFoldersGridSize: -1
   m_LastProjectPath: D:\Documents\Uni\3rd Year\Semester 1\COMP30019 - Graphics & Interaction\Projects\Project
     2\COMP30019-A-Fruitful-Time\AFruitfulTime
   m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: ec240000
-    m_LastClickedID: 9452
+    m_SelectedIDs: 14250000
+    m_LastClickedID: 9492
     m_ExpandedIDs: 00000000be240000fc24000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -424,7 +424,7 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 0
+    m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: c6230000f6240000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -513,9 +513,9 @@ MonoBehaviour:
     height: 421
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 
+    m_SelectedIDs: 18250000
     m_LastClickedID: 0
-    m_ExpandedIDs: e8fbffff00000000
+    m_ExpandedIDs: e0fdfaffd806fbff001cfbff54f9ffffe8fbffff00000000102600003c4d0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -565,14 +565,14 @@ MonoBehaviour:
     width: 918
     height: 421
   m_SceneLighting: 1
-  lastFramingTime: 120.51002188926675
+  lastFramingTime: 1646.2377395433846
   m_2DMode: 0
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -3.729622, y: 4.821718, z: 8.927422}
+    m_Target: {x: 24.98684, y: 0.5, z: 30.816603}
     speed: 2
-    m_Value: {x: -3.729622, y: 4.821718, z: 8.927422}
+    m_Value: {x: 24.98684, y: 0.5, z: 30.816603}
   m_RenderMode: 0
   m_ValidateTrueMetals: 0
   m_SceneViewState:
@@ -595,13 +595,13 @@ MonoBehaviour:
       speed: 2
       m_Value: 0
   m_Rotation:
-    m_Target: {x: -0.096358925, y: -0.14134374, z: 0.013824875, w: -0.98516285}
+    m_Target: {x: -0.07444262, y: 0.7000407, z: -0.07377565, w: -0.70636994}
     speed: 2
-    m_Value: {x: -0.096358925, y: -0.14134374, z: 0.0138248755, w: -0.98516285}
+    m_Value: {x: -0.07444262, y: 0.7000407, z: -0.07377565, w: -0.70636994}
   m_Size:
-    m_Target: 97.77712
+    m_Target: 17.042381
     speed: 2
-    m_Value: 97.77712
+    m_Value: 17.042381
   m_Ortho:
     m_Target: 0
     speed: 2
