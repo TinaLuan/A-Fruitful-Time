@@ -722,7 +722,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: '- Use the arrow keys and mouse to move
+  m_Text: '- Use the W,A,S,D keys and mouse to move
 
 
     - Collect items to help escape the maze quicker
