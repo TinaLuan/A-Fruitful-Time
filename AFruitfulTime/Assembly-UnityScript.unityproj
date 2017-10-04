@@ -47,6 +47,8 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\MapScripts\groundScript.js" />
+     <None Include="Assets\Fruit Pack\Shaders\ToonLitTransparent.shader" />
+     <None Include="Assets\Fruit Pack\Shaders\ToonLit.shader" />
  <Reference Include="UnityEngine.UI">
  <HintPath>D:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>

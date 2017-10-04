@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerScript : MonoBehaviour {
 
-	public int moveSpeed = 10;
+	public int moveSpeed = 3;
 	public int cameraSpeed = 400;
 	//private float rollSpeed = 40;
 	//private float roll = 0.0f;

@@ -52,6 +52,8 @@
      <Compile Include="Assets\Scripts\SceneScripts\InstructionsController.cs" />
      <Compile Include="Assets\Scripts\SceneScripts\MainMenuController.cs" />
      <Compile Include="Assets\Scripts\SceneScripts\OptionsController.cs" />
+     <None Include="Assets\Fruit Pack\Shaders\ToonLitTransparent.shader" />
+     <None Include="Assets\Fruit Pack\Shaders\ToonLit.shader" />
  <Reference Include="UnityEngine.UI">
  <HintPath>D:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
