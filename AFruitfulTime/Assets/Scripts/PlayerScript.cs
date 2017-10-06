@@ -9,7 +9,7 @@ public class PlayerScript : MonoBehaviour {
 	//private float rollSpeed = 40;
 	//private float roll = 0.0f;
 	private float yaw = 0.0f;
-	private float pitch = 0.0f;
+	//private float pitch = 0.0f;
 
 	// Use this for initialization
 	void Start () {
