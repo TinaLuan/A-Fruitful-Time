@@ -48,9 +48,14 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\CameraScript.cs" />
      <Compile Include="Assets\Scripts\GlobalOptions.cs" />
+     <Compile Include="Assets\Scripts\MusicScripts\EndMusic.cs" />
+     <Compile Include="Assets\Scripts\MusicScripts\GameMusic.cs" />
+     <Compile Include="Assets\Scripts\MusicScripts\MenuMusic.cs" />
      <Compile Include="Assets\Scripts\PlayerScript.cs" />
+     <Compile Include="Assets\Scripts\SceneScripts\GameEndScreensController.cs" />
      <Compile Include="Assets\Scripts\SceneScripts\InstructionsController.cs" />
      <Compile Include="Assets\Scripts\SceneScripts\MainMenuController.cs" />
+     <Compile Include="Assets\Scripts\SceneScripts\MainSceneScript.cs" />
      <Compile Include="Assets\Scripts\SceneScripts\OptionsController.cs" />
      <None Include="Assets\Fruit Pack\Shaders\ToonLitTransparent.shader" />
      <None Include="Assets\Fruit Pack\Shaders\ToonLit.shader" />
