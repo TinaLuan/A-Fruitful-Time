@@ -57,6 +57,7 @@
      <Compile Include="Assets\Scripts\SceneScripts\MainMenuController.cs" />
      <Compile Include="Assets\Scripts\SceneScripts\MainSceneScript.cs" />
      <Compile Include="Assets\Scripts\SceneScripts\OptionsController.cs" />
+     <Compile Include="Assets\Scripts\TimerScript.cs" />
      <None Include="Assets\Fruit Pack\Shaders\ToonLitTransparent.shader" />
      <None Include="Assets\Fruit Pack\Shaders\ToonLit.shader" />
  <Reference Include="UnityEngine.UI">

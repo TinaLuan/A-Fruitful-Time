@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class MainSceneScript : MonoBehaviour {
 
@@ -13,9 +12,5 @@ public class MainSceneScript : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		
-	}
-
-	public void endGame() {
-		SceneManager.LoadScene("EndGame");
 	}
 }
