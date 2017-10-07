@@ -48,6 +48,11 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\CameraScript.cs" />
      <Compile Include="Assets\Scripts\GlobalOptions.cs" />
+     <Compile Include="Assets\Scripts\ItemScripts\AppleScript.cs" />
+     <Compile Include="Assets\Scripts\ItemScripts\BananaScript.cs" />
+     <Compile Include="Assets\Scripts\ItemScripts\KiwiScript.cs" />
+     <Compile Include="Assets\Scripts\ItemScripts\PearScript.cs" />
+     <Compile Include="Assets\Scripts\ItemScripts\StrawberryScript.cs" />
      <Compile Include="Assets\Scripts\MusicScripts\EndMusic.cs" />
      <Compile Include="Assets\Scripts\MusicScripts\GameMusic.cs" />
      <Compile Include="Assets\Scripts\MusicScripts\MenuMusic.cs" />

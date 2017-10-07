@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class TimerScript : MonoBehaviour {
 
-	static float timerCount = 60;
+	private static float timerCount = 60;
 
 	//public GameObject target;
 	public Text timerText;
