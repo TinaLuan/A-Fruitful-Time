@@ -6,11 +6,12 @@ using UnityEngine;
 public class ItemManager : MonoBehaviour {
 
 	// TextView showing current item effect. 
-	public Text itemText;
+	public static Text itemText;
 
 	// Timers for each fruit item effect.
 	private static float appleTimer = 0F;
 	private static float bananaTimer = 0F;
+	private static float bonusTimer = 0F;
 	private static bool isKiwi = false;
 	private static bool isPear = false;
 	private static bool isStrawberry = false;
@@ -47,15 +48,25 @@ public class ItemManager : MonoBehaviour {
 	public static void setBananaTimer() {
 		bananaTimer = standardTimer;
 	}
+	public static void setBonusTimer() {
+		bonusTimer = standardTimer;
+	}
 	public static void setKiwiTimer() {
+		setBonusTimer();
 		isKiwi = true;
 	}
 	public static void setPearTimer() {
 		isPear = true;
 	}
 	public static void setStrawberryTimer() {
+		setBonusTimer();
 		isStrawberry = true;
 	}
+
+	void Start() {
+		// Finds the item text object
+		itemText = GameObject.Find("ItemText").GetComponent<Text>();
+ 	}
 
 	/*
 	 * Checks whether any item has been picked up,
@@ -67,33 +78,47 @@ public class ItemManager : MonoBehaviour {
 			if ((int)appleTimer == 0) {
 				speedUp = false;
 				ItemEffectManager.resetPlayerSpeed();
-				//itemText.text = "Timer: " + (int) appleTimer;
+				itemText.text = "";
 			} else {
 				ItemEffectManager.applyApple();
 				appleTimer -= Time.deltaTime;
+				itemText.text = "Increased Speed!";
 			}
 		}
 		if (speedDown) {
 			if ((int)bananaTimer == 0) {
 				speedDown = false;
 				ItemEffectManager.resetPlayerSpeed();
-				//itemText.text = "Timer: " + (int) appleTimer;
+				itemText.text = "";
 			} else {
 				ItemEffectManager.applyBanana();
 				bananaTimer -= Time.deltaTime;
+				itemText.text = "Reduced Speed!";
 			}
 		}
 		if (isKiwi) {
-			isKiwi = false;
-			ItemEffectManager.applyKiwi(kiwiBonus);
+			if ((int)bonusTimer == 0) {
+				isKiwi = false;
+				itemText.text = "";
+			} else if ((int)bonusTimer == 5) {
+				ItemEffectManager.applyKiwi(kiwiBonus);
+				itemText.text = "Bonus 10 seconds!";
+			}
+			bonusTimer -= Time.deltaTime;
 		}
 		if (isPear) {
 			isPear = false;
 			ItemEffectManager.applyPear();
 		}
 		if (isStrawberry) {
-			isStrawberry = false;
-			ItemEffectManager.applyStrawberry(strawberryBonus);
+			if ((int)bonusTimer == 0) {
+				isStrawberry = false;
+				itemText.text = "";
+			} else if ((int)bonusTimer == 5) {
+				ItemEffectManager.applyStrawberry(strawberryBonus);
+				itemText.text = "Bonus 5 seconds!";
+			}
+			bonusTimer -= Time.deltaTime;
 		}
 	}
 }

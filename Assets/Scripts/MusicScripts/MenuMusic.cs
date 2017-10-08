@@ -11,7 +11,9 @@ public class MenuMusic : MonoBehaviour {
 
 	public void Awake() {
 		GameObject endMusic = GameObject.FindGameObjectWithTag("EndMusic");
+		GameObject winMusic = GameObject.FindGameObjectWithTag("WinMusic");
 		Destroy(endMusic);
+		Destroy(winMusic);
 
 		GameObject[] menuMusic = GameObject.FindGameObjectsWithTag("MenuMusic");
 		if (menuMusic.Length > 1) {
