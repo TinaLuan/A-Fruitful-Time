@@ -9,16 +9,11 @@ public class TimerScript : MonoBehaviour {
 	// Game timer (in seconds).
 	private static float timerCount = 60;
 
-	// Adds bonus time to timerCount when the appropriate item is picked up.
-	public static void addTimerCount(float bonusTime) {
-		timerCount += bonusTime;
-	}
-
 	// TextView to show the game timer.
 	public Text timerText;
-	
+
 	// Reduces timer until finished
-	void Update () {
+	void Update() {
 		reduceTimer();
 		isTimerFinished();
 	}
@@ -34,5 +29,10 @@ public class TimerScript : MonoBehaviour {
 		if ((int)timerCount == 0) {
 			SceneManager.LoadScene("GameEnded");
 		}
+	}
+
+	// Adds bonus time to timerCount when the appropriate item is picked up.
+	public static void addTimerCount(float bonusTime) {
+		timerCount += bonusTime;
 	}
 }
