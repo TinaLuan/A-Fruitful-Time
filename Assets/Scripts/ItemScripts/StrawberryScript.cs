@@ -4,13 +4,10 @@ using UnityEngine;
 
 public class StrawberryScript : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
+	public GameObject strawberry;
+
+	void OnTriggerEnter(Collider collidingObject) {
+		ItemManager.setStrawberryTimer();
+		Destroy(strawberry);
 	}
 }

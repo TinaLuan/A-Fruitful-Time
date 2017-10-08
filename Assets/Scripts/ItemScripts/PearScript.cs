@@ -4,13 +4,10 @@ using UnityEngine;
 
 public class PearScript : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
+	public GameObject pear;
+
+	void OnTriggerEnter(Collider collidingObject) {
+		ItemManager.setPearTimer();
+		Destroy(pear);
 	}
 }

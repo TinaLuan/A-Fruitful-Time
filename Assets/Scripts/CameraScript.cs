@@ -16,5 +16,6 @@ public class CameraScript : MonoBehaviour {
 
 		// Update the camera's position according to the target's position
 		this.transform.position = target.transform.position;
+		this.transform.position += new Vector3(0, 1.1f, 0);
 	}
 }

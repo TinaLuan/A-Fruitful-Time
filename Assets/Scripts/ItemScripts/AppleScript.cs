@@ -4,17 +4,10 @@ using UnityEngine;
 
 public class AppleScript : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+	public GameObject apple;
 
-	void OnCollisionEnter(Collision collision) {
-
+	void OnTriggerEnter(Collider collidingObject) {
+		ItemManager.setPlayerSpeedUp();
+		Destroy(apple);
 	}
 }

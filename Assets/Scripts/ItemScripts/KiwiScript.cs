@@ -4,13 +4,10 @@ using UnityEngine;
 
 public class KiwiScript : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
+	public GameObject kiwi;
+
+	void OnTriggerEnter(Collider collidingObject) {
+		ItemManager.setKiwiTimer();
+		Destroy(kiwi);
 	}
 }

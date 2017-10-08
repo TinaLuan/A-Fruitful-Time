@@ -4,13 +4,10 @@ using UnityEngine;
 
 public class BananaScript : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
+	public GameObject banana;
+
+	void OnTriggerEnter(Collider collidingObject) {
+		ItemManager.setPlayerSpeedDown();
+		Destroy(banana);
 	}
 }
