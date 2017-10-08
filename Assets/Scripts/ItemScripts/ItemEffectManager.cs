@@ -31,7 +31,7 @@ public class ItemEffectManager : MonoBehaviour {
 	}
 
 	public static void applyPear() {
-		SceneManager.LoadScene("MainMenu");
+		SceneManager.LoadScene("GameEnded");
 	}
 
 	public static void applyStrawberry(float strawberryBonus) {
