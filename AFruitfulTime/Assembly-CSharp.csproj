@@ -56,6 +56,7 @@
      <Compile Include="Assets\Scripts\MusicScripts\EndMusic.cs" />
      <Compile Include="Assets\Scripts\MusicScripts\GameMusic.cs" />
      <Compile Include="Assets\Scripts\MusicScripts\MenuMusic.cs" />
+     <Compile Include="Assets\Scripts\ParticleSystemScript.cs" />
      <Compile Include="Assets\Scripts\PlayerScript.cs" />
      <Compile Include="Assets\Scripts\SceneScripts\GameEndScreensController.cs" />
      <Compile Include="Assets\Scripts\SceneScripts\InstructionsController.cs" />
