@@ -6,28 +6,33 @@ using UnityEngine.SceneManagement;
 
 public class TimerScript : MonoBehaviour {
 
+	// Game timer (in seconds).
 	private static float timerCount = 60;
 
-	//public GameObject target;
-	public Text timerText;
-
-	// Use this for initialization
-	void Start () {
-		//PlayerPrefs.GetInt("highScore",highScore);
-        //highScore = PlayerPrefs.GetInt ("highScore", highScore);
+	// Adds bonus time to timerCount when the appropriate item is picked up.
+	public static void addTimerCount(float bonusTime) {
+		timerCount += bonusTime;
 	}
+
+	// TextView to show the game timer.
+	public Text timerText;
 	
-	// Update is called once per frame
+	// Reduces timer until finished
 	void Update () {
+		reduceTimer();
+		isTimerFinished();
+	}
+
+	// Reduces the game timer.
+	private void reduceTimer() {
 		timerCount -= Time.deltaTime;
 		timerText.text = "Timer: " + (int) timerCount;
+	}
 
+	// When the timer has finished, transition to a "Game Over" scene.
+	private void isTimerFinished() {
 		if ((int)timerCount == 0) {
 			SceneManager.LoadScene("GameEnded");
 		}
-	}
-
-	public void endGame() {
-		
 	}
 }

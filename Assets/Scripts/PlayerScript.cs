@@ -4,131 +4,82 @@ using UnityEngine;
 
 public class PlayerScript : MonoBehaviour {
 
-	private static float timerCount;
-	public int moveSpeed;
-	private readonly static int defaultMoveSpeed = 3;
-	public int cameraSpeed;
-	private readonly static int defaultCameraSpeed = 400;
+	// Player and camera move speed.
+	private static float playerSpeed, cameraSpeed;
+	private readonly static float defaultPlayerSpeed = 3F;
+	private readonly static float defaultCameraSpeed = 400F;
+
+	// Used for player mouse movement.
 	private float yaw = 0.0f;
-	//private float pitch = 0.0f;
+	private float pitch = 0.0f;/*
+	private float rotationX = 0F;
+	private float rotationY = 0F;
+	private float sensitivityX = 15F;
+	private float sensitivityY = 15F;
+	private float minimumX = -20F;
+	private float maximumX = 20F;
+	private float minimumY = -20F;
+	private float maximumY = 20F;*/
 
-	private bool isApple = false;
-	private bool isBanana = false;
-	private bool isKiwi = false;
-	private bool isPear = false;
-	private bool isStrawberry = false;
+	// Setters and getters to be used from other classes.
+	public static float getDefaultPlayerSpeed() {
+		return defaultPlayerSpeed;
+	}
+	public static void setPlayerSpeed(float newPlayerSpeed) {
+		playerSpeed = newPlayerSpeed;
+	}
+	public static void setCameraSpeed(float newCameraSpeed) {
+		cameraSpeed = newCameraSpeed;
+	}
 
-
-	// Use this for initialization
+	// Initialises default player and camera move speed.
 	void Start () {
-		moveSpeed = defaultMoveSpeed;
-		cameraSpeed = defaultCameraSpeed;
+		setPlayerSpeed(defaultPlayerSpeed);
+		setCameraSpeed(defaultCameraSpeed);
 	}
 
-	public void pickedApple() {
-
-	}
-
-	public void pickedBanana() {
-
-	}
-
-	public void pickedKiwi() {
-
-	}
-
-	public void pickedPear() {
-
-	}
-
-	public void pickedStrawberry() {
-
-	}
-		
-	// Update is called once per frame
+	// Check item effects before checking player movement.
 	void FixedUpdate() {
-
-		checkItems();
-
+		ItemManager.checkItems();
 		playerMovement();
 	}
 
-	private void checkItems() {
-		if (isApple) {
-
-		}
-		if (isBanana) {
-
-		}
-		if (isKiwi) {
-
-		}
-		if (isPear) {
-
-		}
-		if (isStrawberry) {
-
-		}
-
-	}
-
-	private void checkItemTimer() {
-		if (isApple) {
-
-		}
-		if (isBanana) {
-
-		}
-		if (isKiwi) {
-
-		}
-		if (isPear) {
-
-		}
-		if (isStrawberry) {
-
-		}
-
-	}
-
+	/*
+	 * Updates the player movement when a key is pressed,
+	 * or when the mouse axis changes.
+	 */
 	private void playerMovement() {
 		
-		// Updates "Forward" Movement
+		// Updates "Forward" key movement
 		if (Input.GetKey(KeyCode.W)) {
-			this.transform.localPosition += transform.forward * moveSpeed * Time.deltaTime;
+			this.transform.localPosition += transform.forward * playerSpeed * Time.deltaTime;
 		}
-		// Updates "Backward" Movement
+		// Updates "Backward" key movement
 		if (Input.GetKey(KeyCode.S)) {
-			this.transform.localPosition -= transform.forward * moveSpeed * Time.deltaTime;
+			this.transform.localPosition -= transform.forward * playerSpeed * Time.deltaTime;
 		}
-
-		// Updates "Right" Movement
+		// Updates "Right" key movement
 		if (Input.GetKey (KeyCode.D)) {
-			this.transform.localPosition += transform.right * moveSpeed * Time.deltaTime;
+			this.transform.localPosition += transform.right * playerSpeed * Time.deltaTime;
 		}
-		// Updates "Left" Movement
+		// Updates "Left" key movement
 		if (Input.GetKey(KeyCode.A)) {
-			this.transform.localPosition -= transform.right * moveSpeed * Time.deltaTime;
+			this.transform.localPosition -= transform.right * playerSpeed * Time.deltaTime;
 		}
 
-		// Updates "Yaw, Pitch, and Roll" Movement
+		// Updates "Yaw and Pitch" Movement.
 		if (Input.mousePresent) {
-			// Updates "Pitch" Movement
-			//pitch -= Input.GetAxis ("Mouse Y") * cameraSpeed * Time.deltaTime;
 
-			// Updates "Yaw" Movement
+			// Updates "Yaw" Movement (Left & Right).
 			yaw += Input.GetAxis("Mouse X") * cameraSpeed * Time.deltaTime; 
+			//rotationX = Mathf.Clamp (rotationX, minimumX, maximumX);
 
-			// Updates whichever changed
-			this.transform.eulerAngles = new Vector3(0, yaw, 0);
+			// Updates "Pitch" Movement (Up & Down).
+			pitch += Input.GetAxis ("Mouse Y") * cameraSpeed * Time.deltaTime;
+			//rotationY = Mathf.Clamp (rotationY, minimumY, maximumY);
+
+			// Updates each change.
+			this.transform.eulerAngles = new Vector3(-0, yaw, 0);
 		}
 	}
-
-	/*
-	void onCollisionEnter(Collision col) {
-		if (col.gameObject.name == "Edge") {
-			
-		}
-
-	}*/
 }
