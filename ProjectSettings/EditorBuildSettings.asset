@@ -19,4 +19,7 @@ EditorBuildSettings:
     guid: db74354b3309643caa1594b367b7ec18
   - enabled: 1
     path: Assets/Scenes/GameEnded.unity
+    guid: 93fd30acbe1bc0d40befd0f17b815329
+  - enabled: 1
+    path: Assets/Scenes/GameWon.unity
     guid: 00000000000000000000000000000000

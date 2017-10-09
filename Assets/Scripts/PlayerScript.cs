@@ -4,68 +4,82 @@ using UnityEngine;
 
 public class PlayerScript : MonoBehaviour {
 
-	public int moveSpeed = 3;
-	public int cameraSpeed = 400;
-	//private float rollSpeed = 40;
-	//private float roll = 0.0f;
+	// Player and camera move speed.
+	private static float playerSpeed, cameraSpeed;
+	private readonly static float defaultPlayerSpeed = 3F;
+	private readonly static float defaultCameraSpeed = 400F;
+
+	// Used for player mouse movement.
 	private float yaw = 0.0f;
-	//private float pitch = 0.0f;
+	private float pitch = 0.0f;/*
+	private float rotationX = 0F;
+	private float rotationY = 0F;
+	private float sensitivityX = 15F;
+	private float sensitivityY = 15F;
+	private float minimumX = -20F;
+	private float maximumX = 20F;
+	private float minimumY = -20F;
+	private float maximumY = 20F;*/
 
-	// Use this for initialization
+	// Setters and getters to be used from other classes.
+	public static float getDefaultPlayerSpeed() {
+		return defaultPlayerSpeed;
+	}
+	public static void setPlayerSpeed(float newPlayerSpeed) {
+		playerSpeed = newPlayerSpeed;
+	}
+	public static void setCameraSpeed(float newCameraSpeed) {
+		cameraSpeed = newCameraSpeed;
+	}
+
+	// Initialises default player and camera move speed.
 	void Start () {
+		setPlayerSpeed(defaultPlayerSpeed);
+		setCameraSpeed(defaultCameraSpeed);
 	}
+
+	// Check item effects before checking player movement.
+	void FixedUpdate() {
+		ItemManager.checkItems();
+		playerMovement();
+	}
+
+	/*
+	 * Updates the player movement when a key is pressed,
+	 * or when the mouse axis changes.
+	 */
+	private void playerMovement() {
 		
-	void onCollisionEnter(Collision col) {
-		if (col.gameObject.name == "Edge") {
-			
-		}
-	}
-
-	// Update is called once per frame
-	void FixedUpdate () {
-
-		// Updates "Forward" Movement
+		// Updates "Forward" key movement
 		if (Input.GetKey(KeyCode.W)) {
-			this.transform.localPosition += transform.forward * moveSpeed * Time.deltaTime;
+			this.transform.localPosition += transform.forward * playerSpeed * Time.deltaTime;
 		}
-		// Updates "Backward" Movement
+		// Updates "Backward" key movement
 		if (Input.GetKey(KeyCode.S)) {
-			this.transform.localPosition -= transform.forward * moveSpeed * Time.deltaTime;
+			this.transform.localPosition -= transform.forward * playerSpeed * Time.deltaTime;
 		}
-
-		// Updates "Right" Movement
+		// Updates "Right" key movement
 		if (Input.GetKey (KeyCode.D)) {
-			this.transform.localPosition += transform.right * moveSpeed * Time.deltaTime;
+			this.transform.localPosition += transform.right * playerSpeed * Time.deltaTime;
 		}
-		// Updates "Left" Movement
+		// Updates "Left" key movement
 		if (Input.GetKey(KeyCode.A)) {
-			this.transform.localPosition -= transform.right * moveSpeed * Time.deltaTime;
+			this.transform.localPosition -= transform.right * playerSpeed * Time.deltaTime;
 		}
 
-
-		// Updates "Yaw, Pitch, and Roll" Movement
+		// Updates "Yaw and Pitch" Movement.
 		if (Input.mousePresent) {
 
-			// Updates "Pitch" Movement
-			//pitch -= Input.GetAxis ("Mouse Y") * cameraSpeed * Time.deltaTime;
-
-
-			// Updates "Yaw" Movement
+			// Updates "Yaw" Movement (Left & Right).
 			yaw += Input.GetAxis("Mouse X") * cameraSpeed * Time.deltaTime; 
-			/*
-			// Updates "Right Roll" Movement
-			if (Input.GetKey (KeyCode.Q)) {
-				roll += rollSpeed * Time.deltaTime;
-			}
-			// Updates "Left Roll" Movement
-			if (Input.GetKey (KeyCode.E)) {
-				roll += -rollSpeed * Time.deltaTime;
-			}*/
+			//rotationX = Mathf.Clamp (rotationX, minimumX, maximumX);
 
-			// Updates whichever changed
-			//this.transform.eulerAngles = new Vector3(pitch, yaw, roll);
-			this.transform.eulerAngles = new Vector3(0, yaw, 0);
+			// Updates "Pitch" Movement (Up & Down).
+			pitch += Input.GetAxis ("Mouse Y") * cameraSpeed * Time.deltaTime;
+			//rotationY = Mathf.Clamp (rotationY, minimumY, maximumY);
+
+			// Updates each change.
+			this.transform.eulerAngles = new Vector3(-0, yaw, 0);
 		}
-
 	}
 }

@@ -10,11 +10,11 @@ using UnityEngine;
 public class EndMusic : MonoBehaviour {
 
 	public void Awake() {
-		GameObject menuMusic = GameObject.FindGameObjectWithTag("GameMusic");
-		Destroy(menuMusic);
+		GameObject gameMusic = GameObject.FindGameObjectWithTag("GameMusic");
+		Destroy(gameMusic);
 
-		GameObject[] gameMusic = GameObject.FindGameObjectsWithTag("EndMusic");
-		if (gameMusic.Length > 1) {
+		GameObject[] endMusic = GameObject.FindGameObjectsWithTag("EndMusic");
+		if (endMusic.Length > 1) {
 			Destroy(this.gameObject);
 		}
 		DontDestroyOnLoad(this.gameObject);
