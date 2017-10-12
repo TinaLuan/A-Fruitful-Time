@@ -8,6 +8,9 @@ public class ItemManager : MonoBehaviour {
 	// TextView showing current item effect. 
 	public static Text itemText;
 
+	// Panel containing the above TextView.
+	public static Image itemPanel;
+
 	// Timers for each fruit item effect.
 	private static float appleTimer = 0F;
 	private static float bananaTimer = 0F;
@@ -33,12 +36,16 @@ public class ItemManager : MonoBehaviour {
 		setAppleTimer();
 		speedUp = true;
 		speedDown = false;
+		isKiwi = false;
+		isStrawberry = false;
 	}
 	public static void setPlayerSpeedDown() {
 		ItemEffectManager.resetPlayerSpeed();
 		setBananaTimer();
 		speedUp = false;
 		speedDown = true;
+		isKiwi = false;
+		isStrawberry = false;
 	}
 
 	 // Respective item has been picked up and its timer starts.
@@ -53,19 +60,29 @@ public class ItemManager : MonoBehaviour {
 	}
 	public static void setKiwiTimer() {
 		setBonusTimer();
+		speedUp = false;
+		speedDown = false;
 		isKiwi = true;
+		isStrawberry = false;
 	}
 	public static void setPearTimer() {
 		isPear = true;
 	}
 	public static void setStrawberryTimer() {
 		setBonusTimer();
+		speedUp = false;
+		speedDown = false;
+		isKiwi = false;
 		isStrawberry = true;
 	}
 
 	void Start() {
-		// Finds the item text object
+		// Finds the item text object.
 		itemText = GameObject.Find("ItemText").GetComponent<Text>();
+
+		// Finds the item panel object.
+		itemPanel = GameObject.Find("ItemPanel").GetComponent<Image>();
+		itemPanel.color = new Color(255,255,255,0);
  	}
 
 	/*
@@ -79,10 +96,18 @@ public class ItemManager : MonoBehaviour {
 				speedUp = false;
 				ItemEffectManager.resetPlayerSpeed();
 				itemText.text = "";
+				itemPanel.color = new Color(255,255,255,0);
 			} else {
 				ItemEffectManager.applyApple();
 				appleTimer -= Time.deltaTime;
 				itemText.text = "Increased Speed!";
+				itemPanel.color = new Color(255,255,255,255);
+			}
+		} else if ((int) appleTimer != 0) {
+			ItemEffectManager.applyApple();
+			appleTimer -= Time.deltaTime;
+			if ((int)appleTimer == 0) {
+				ItemEffectManager.resetPlayerSpeed();
 			}
 		}
 		if (speedDown) {
@@ -90,19 +115,29 @@ public class ItemManager : MonoBehaviour {
 				speedDown = false;
 				ItemEffectManager.resetPlayerSpeed();
 				itemText.text = "";
+				itemPanel.color = new Color(255,255,255,0);
 			} else {
 				ItemEffectManager.applyBanana();
 				bananaTimer -= Time.deltaTime;
 				itemText.text = "Reduced Speed!";
+				itemPanel.color = new Color(255,255,255,255);
+			}
+		} else if ((int) bananaTimer != 0) {
+			ItemEffectManager.applyBanana();
+			bananaTimer -= Time.deltaTime;
+			if ((int)bananaTimer == 0) {
+				ItemEffectManager.resetPlayerSpeed();
 			}
 		}
 		if (isKiwi) {
 			if ((int)bonusTimer == 0) {
 				isKiwi = false;
 				itemText.text = "";
+				itemPanel.color = new Color(255,255,255,0);
 			} else if ((int)bonusTimer == 5) {
 				ItemEffectManager.applyKiwi(kiwiBonus);
 				itemText.text = "Bonus 10 seconds!";
+				itemPanel.color = new Color(255,255,255,255);
 			}
 			bonusTimer -= Time.deltaTime;
 		}
@@ -114,9 +149,11 @@ public class ItemManager : MonoBehaviour {
 			if ((int)bonusTimer == 0) {
 				isStrawberry = false;
 				itemText.text = "";
+				itemPanel.color = new Color(255,255,255,0);
 			} else if ((int)bonusTimer == 5) {
 				ItemEffectManager.applyStrawberry(strawberryBonus);
 				itemText.text = "Bonus 5 seconds!";
+				itemPanel.color = new Color(255,255,255,255);
 			}
 			bonusTimer -= Time.deltaTime;
 		}
