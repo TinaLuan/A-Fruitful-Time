@@ -8,6 +8,8 @@ public class ItemManager : MonoBehaviour {
 	// TextView showing current item effect. 
 	public static Text itemText;
 
+	public static Image ItemPanel;
+
 	// Timers for each fruit item effect.
 	private static float appleTimer = 0F;
 	private static float bananaTimer = 0F;
@@ -66,6 +68,8 @@ public class ItemManager : MonoBehaviour {
 	void Start() {
 		// Finds the item text object
 		itemText = GameObject.Find("ItemText").GetComponent<Text>();
+		ItemPanel = GameObject.Find("ItemPanel").GetComponent<Image>();
+		ItemPanel.color = new Color (255, 255, 255, 255);
  	}
 
 	/*

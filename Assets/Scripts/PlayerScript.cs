@@ -34,6 +34,7 @@ public class PlayerScript : MonoBehaviour {
 
 	// Initialises default player and camera move speed.
 	void Start () {
+		this.transform.localPosition += new Vector3(0, 1f, 0);
 		setPlayerSpeed(defaultPlayerSpeed);
 		setCameraSpeed(defaultCameraSpeed);
 	}
