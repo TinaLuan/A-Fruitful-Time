@@ -6,7 +6,7 @@ public class PlayerScript : MonoBehaviour {
 
 	// Player and camera move speed.
 	private static float playerSpeed, cameraSpeed;
-	private readonly static float defaultPlayerSpeed = 3F;
+	private readonly static float defaultPlayerSpeed = 10F;
 	private readonly static float defaultCameraSpeed = 400F;
 
 	// Used for player mouse movement.
