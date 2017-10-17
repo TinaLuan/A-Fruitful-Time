@@ -8,6 +8,15 @@ public class TimerScript : MonoBehaviour {
 
 	// Game timer (in seconds).
 	private static float timerCount = 60;
+	//private static float defaultTimerCount = 60;
+
+	public static void setTimerCount(float newTimer) {
+		timerCount = newTimer;
+	}
+
+	public static float getTimerCount() {
+		return timerCount;
+	}
 
 	// TextView to show the game timer.
 	public Text timerText;

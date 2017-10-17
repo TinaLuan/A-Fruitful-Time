@@ -6,20 +6,26 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: 73a05298d10b3a44db710a2d3c490a48
+  - enabled: 1
     path: Assets/Scenes/Options.unity
     guid: a23a385d292d8a843b85933137bd577f
   - enabled: 1
     path: Assets/Scenes/Instructions.unity
     guid: d93e8ff8e209c0648bc4556459cd6e6d
   - enabled: 1
-    path: Assets/Scenes/MainMenu.unity
-    guid: 73a05298d10b3a44db710a2d3c490a48
-  - enabled: 1
-    path: Assets/Scenes/MainScene.unity
+    path: Assets/Scenes/Story.unity
+    guid: 6d8b52a2bc28b834ba5fa892a2034c7c
+  - enabled: 0
+    path: 
     guid: db74354b3309643caa1594b367b7ec18
+  - enabled: 1
+    path: Assets/Scenes/AbbyScene.unity
+    guid: cdf01ff93139e4e49bceac1a5323aa44
   - enabled: 1
     path: Assets/Scenes/GameEnded.unity
     guid: 93fd30acbe1bc0d40befd0f17b815329
   - enabled: 1
     path: Assets/Scenes/GameWon.unity
-    guid: 00000000000000000000000000000000
+    guid: ec753d7a631a4b84498b1f968b7c2fbe
