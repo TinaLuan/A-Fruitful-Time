@@ -6,7 +6,7 @@ public class PlayerScript : MonoBehaviour {
 
 	// Player and camera move speed.
 	private static float playerSpeed, cameraSpeed;
-	private readonly static float defaultPlayerSpeed = 10F;
+	private readonly static float defaultPlayerSpeed = 6F;
 	private readonly static float defaultCameraSpeed = 400F;
 
 	// Used for player mouse movement.
@@ -34,7 +34,11 @@ public class PlayerScript : MonoBehaviour {
 
 	// Initialises default player and camera move speed.
 	void Start () {
-		this.transform.localPosition += new Vector3(0, 1f, 0);
+		// Limits fps to 60.
+		QualitySettings.vSyncCount = 0;
+		Application.targetFrameRate = 60;
+
+		// Sets the default player & camera speed.
 		setPlayerSpeed(defaultPlayerSpeed);
 		setCameraSpeed(defaultCameraSpeed);
 	}
@@ -76,8 +80,15 @@ public class PlayerScript : MonoBehaviour {
 			//rotationX = Mathf.Clamp (rotationX, minimumX, maximumX);
 
 			// Updates "Pitch" Movement (Up & Down).
-			pitch += Input.GetAxis ("Mouse Y") * cameraSpeed * Time.deltaTime;
+			//pitch += Input.GetAxis ("Mouse Y") * cameraSpeed * Time.deltaTime;
 			//rotationY = Mathf.Clamp (rotationY, minimumY, maximumY);
+
+			/*
+			if (pitch > 10) {
+				pitch = 10;
+			} else if (pitch < -10) {
+				pitch = -10;
+			}*/
 
 			// Updates each change.
 			this.transform.eulerAngles = new Vector3(-0, yaw, 0);
