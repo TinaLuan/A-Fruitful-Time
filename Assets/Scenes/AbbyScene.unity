@@ -10122,6 +10122,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1369075679}
+  - component: {fileID: 1369075680}
   m_Layer: 0
   m_Name: MainSceneController
   m_TagString: Untagged
@@ -10142,6 +10143,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1369075680
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1369075678}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d46f014ff2246e45ad8bb8e1995f4fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1386616224 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 100000, guid: bae14093491bc3a49a46efde0bbbc33b, type: 3}

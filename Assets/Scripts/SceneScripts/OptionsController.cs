@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class OptionsController : MonoBehaviour {
 
-    public Slider difficultySlider;
+    public static Slider difficultySlider;
 
     public void OnBackButtonPressed() {
 		TimerScript.setTimerCount(difficultySlider.value);
