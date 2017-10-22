@@ -722,15 +722,13 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: '- Use the W A S D keys and mouse to move
+  m_Text: '- Use the W A S D keys and mouse to move.
 
 
-    - Collect fruits to give you power-ups
+    - Collect fruits to give you power-ups.
 
 
-    - Find the only pear before the timer ends!
-
-'
+    - Complete the in-game goal before the timer ends!'
 --- !u!222 &1572673661
 CanvasRenderer:
   m_ObjectHideFlags: 0

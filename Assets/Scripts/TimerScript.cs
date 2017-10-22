@@ -7,8 +7,7 @@ using UnityEngine.SceneManagement;
 public class TimerScript : MonoBehaviour {
 
 	// Game timer (in seconds).
-	private static float timerCount = 60;
-	//private static float defaultTimerCount = 60;
+	private static float timerCount = 0;
 
 	public static void setTimerCount(float newTimer) {
 		timerCount = newTimer;
@@ -20,6 +19,10 @@ public class TimerScript : MonoBehaviour {
 
 	// TextView to show the game timer.
 	public Text timerText;
+
+	void Start() {
+		timerCount = OptionsController.difficultySlider.value;
+	}
 
 	// Reduces timer until finished
 	void Update() {

@@ -12,9 +12,9 @@ public class ItemManager : MonoBehaviour {
 	public static Image itemPanel;
 
 	// Timers for each fruit item effect.
-	private static float appleTimer = 0F;
-	private static float bananaTimer = 0F;
-	private static float bonusTimer = 0F;
+	private static float appleTimer;
+	private static float bananaTimer;
+	private static float bonusTimer;
 	private static bool isKiwi = false;
 	private static bool isPear = false;
 	private static bool isStrawberry = false;
@@ -77,6 +77,11 @@ public class ItemManager : MonoBehaviour {
 	}
 
 	void Start() {
+		// Resets all timers.
+		appleTimer = 0F;
+		bananaTimer = 0F;
+		bonusTimer = 0F;
+
 		// Finds the item text object.
 		itemText = GameObject.Find("ItemText").GetComponent<Text>();
 

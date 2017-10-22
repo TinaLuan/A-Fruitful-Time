@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class GameWonScript : MonoBehaviour {
+public class StoryController : MonoBehaviour {
 
-	public void OnBackButtonPressed() {
-		SceneManager.LoadScene("MainMenu");
+	public void OnOkayButtonPressed() {
+		SceneManager.LoadScene("AbbyScene");
 	}
 }
