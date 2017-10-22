@@ -9,11 +9,5 @@ public class MainSceneController : MonoBehaviour {
 		if (TimerScript.getTimerCount() == 0) {
 			TimerScript.setTimerCount(180);
 		}
-
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
 	}
 }
