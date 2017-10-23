@@ -2,15 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MainSceneScript : MonoBehaviour {
+public class MainSceneController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
+		if (TimerScript.getTimerCount() == 0) {
+			TimerScript.setTimerCount(180);
+		}
 	}
 }
