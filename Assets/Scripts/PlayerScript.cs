@@ -11,7 +11,8 @@ public class PlayerScript : MonoBehaviour {
 
 	// Used for player mouse movement.
 	private float yaw = 0.0f;
-	private float pitch = 0.0f;/*
+	//private float pitch = 0.0f;
+	/*
 	private float rotationX = 0F;
 	private float rotationY = 0F;
 	private float sensitivityX = 15F;
