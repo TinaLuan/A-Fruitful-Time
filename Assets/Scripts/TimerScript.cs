@@ -17,13 +17,28 @@ public class TimerScript : MonoBehaviour {
 		return timerCount;
 	}
 
+	// Starts the timer when the player gets off the boat.
+	private static bool startTimer = false;
+
+	public static void setStartTimer(bool newStartTimer) {
+		startTimer = newStartTimer;
+	}
+
+	public static bool getStartTimer() {
+		return startTimer;
+	}
+
 	// TextView to show the game timer.
 	public Text timerText;
 
 	// Reduces timer until finished
 	void Update() {
-		reduceTimer();
-		isTimerFinished();
+		if (getStartTimer ()) {
+			reduceTimer ();
+			isTimerFinished ();
+		} else {
+			timerText.text = "Timer: " + (int) timerCount;
+		}
 	}
 
 	// Reduces the game timer.
