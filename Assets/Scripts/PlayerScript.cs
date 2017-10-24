@@ -9,6 +9,8 @@ public class PlayerScript : MonoBehaviour {
 	private readonly static float defaultPlayerSpeed = 6F;
 	private readonly static float defaultCameraSpeed = 400F;
 
+	private bool isOnBoat = true;
+
 	// Used for player mouse movement.
 	private float yaw = 0.0f;
 	//private float pitch = 0.0f;
@@ -46,8 +48,32 @@ public class PlayerScript : MonoBehaviour {
 
 	// Check item effects before checking player movement.
 	void FixedUpdate() {
-		ItemManager.checkItems();
-		playerMovement();
+		if (isOnBoat) {
+			this.transform.localPosition += transform.forward * 10f * Time.deltaTime;
+			if (Input.mousePresent) {
+
+				// Updates "Yaw" Movement (Left & Right).
+				yaw += Input.GetAxis("Mouse X") * cameraSpeed * Time.deltaTime; 
+				//rotationX = Mathf.Clamp (rotationX, minimumX, maximumX);
+
+				// Updates "Pitch" Movement (Up & Down).
+				//pitch += Input.GetAxis ("Mouse Y") * cameraSpeed * Time.deltaTime;
+				//rotationY = Mathf.Clamp (rotationY, minimumY, maximumY);
+
+				/*
+			if (pitch > 10) {
+				pitch = 10;
+			} else if (pitch < -10) {
+				pitch = -10;
+			}*/
+
+				// Updates each change.
+				//this.transform.eulerAngles = new Vector3(-0, yaw, 0);
+			}
+		} else {
+			ItemManager.checkItems ();
+			playerMovement ();
+		}
 	}
 
 	/*

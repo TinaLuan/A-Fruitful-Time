@@ -19,7 +19,7 @@ public class BoatScript : MonoBehaviour {
 	void Update () {
 		
 		if (isMoving) {
-			this.transform.localPosition += transform.forward * speed * Time.deltaTime;
+			this.transform.localPosition += transform.right * speed * Time.deltaTime;
 		}
 
 //		if () {
