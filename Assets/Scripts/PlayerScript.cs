@@ -12,7 +12,7 @@ public class PlayerScript : MonoBehaviour {
 	private bool isOnBoat = true;
 	private readonly float boatSpeed = 20f;
 
-	private Vector3 jumpOffPosition = new Vector3 (-104.6f, -2f, -30f);
+	private Vector3 jumpOffPosition = new Vector3 (-104.6f, 0f, -30f);
 
 	// Used for player mouse movement.
 	private float yaw = 0.0f;
