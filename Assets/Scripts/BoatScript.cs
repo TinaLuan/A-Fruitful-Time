@@ -5,14 +5,14 @@ using UnityEngine;
 public class BoatScript : MonoBehaviour {
 	
 	private float speed;
-	private readonly float defaultSpeed = 10f;
+	private readonly float defaultSpeed = 20f;
 
 	private bool isMoving;
 
 	// Use this for initialization
 	void Start () {
 		speed = defaultSpeed;
-		isMoving = true;
+		isMoving = false;
 	}
 
 	// Update is called once per frame
