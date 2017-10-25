@@ -82,7 +82,7 @@ Shader "Unlit/StoneShader"
 			// Implementation of the fragment shader
 			fixed4 frag(vertOut v) : SV_Target
 			{
-				return v.color + tex2D(_MainTex, v.uv);
+				return v.color + tex2D(_MainTex, v.uv);	
 			}
 			ENDCG
 		}
