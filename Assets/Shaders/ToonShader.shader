@@ -113,7 +113,7 @@ Shader "Unlit/ToonShader"
 
 				// Add texture
 				return float4(combinedLight, 1.0) + tex2D(_MainTex, vo.uv);
-
+			}
 			ENDCG
 		}
 	}
