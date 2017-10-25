@@ -387,11 +387,12 @@ MonoBehaviour:
     m_LineSpacing: 1.8
   m_Text: 'Story: After straying off from your team while exploring the ocean, you
     come across a maze filled with bizzarely large fruits. It''s been several weeks
-    since you''ve last eaten, so if you''ve got to find something that''ll satisfy
-    your hunger before you starve and die.
+    since you''ve last eaten, so you''ve got to find something that''ll satisfy your
+    hunger before you starve and die. Only one magical fruit can teleport you back
+    home!
 
 
-    Goal: Collect the pear before the timer ends!'
+    Goal: Collect the magic pear before the timer ends!'
 --- !u!222 &439812710
 CanvasRenderer:
   m_ObjectHideFlags: 0
