@@ -9,18 +9,14 @@ public class PlayerScript : MonoBehaviour {
 	private readonly static float defaultPlayerSpeed = 6F;
 	private readonly static float defaultCameraSpeed = 400F;
 
+	private bool isOnBoat = true;
+	private readonly float boatSpeed = 20f;
+
+	private Vector3 jumpOffPosition = new Vector3 (-104.6f, 0f, -30f);
+
 	// Used for player mouse movement.
 	private float yaw = 0.0f;
 	//private float pitch = 0.0f;
-	/*
-	private float rotationX = 0F;
-	private float rotationY = 0F;
-	private float sensitivityX = 15F;
-	private float sensitivityY = 15F;
-	private float minimumX = -20F;
-	private float maximumX = 20F;
-	private float minimumY = -20F;
-	private float maximumY = 20F;*/
 
 	// Setters and getters to be used from other classes.
 	public static float getDefaultPlayerSpeed() {
@@ -42,12 +38,36 @@ public class PlayerScript : MonoBehaviour {
 		// Sets the default player & camera speed.
 		setPlayerSpeed(defaultPlayerSpeed);
 		setCameraSpeed(defaultCameraSpeed);
+		//print(this.transform.localPosition);
 	}
 
 	// Check item effects before checking player movement.
 	void FixedUpdate() {
-		ItemManager.checkItems();
-		playerMovement();
+
+		ItemManager.checkItems ();
+		playerMovement ();
+
+		/*
+		if (isOnBoat) {
+			 
+			//this.transform.localPosition += transform.forward * boatSpeed * Time.deltaTime;
+			if (Input.GetKey(KeyCode.Space)) {
+				this.transform.localPosition = jumpOffPosition;
+
+				isOnBoat = false;
+			}
+			playerMovement ();
+		} else {
+			
+			ItemManager.checkItems ();
+			playerMovement ();
+
+		}
+
+		if (this.transform.localPosition == ParkingFlag.getPosition) {
+			isOnBoat = false;
+		}
+		*/
 	}
 
 	/*
@@ -55,7 +75,15 @@ public class PlayerScript : MonoBehaviour {
 	 * or when the mouse axis changes.
 	 */
 	private void playerMovement() {
-		
+
+		if (isOnBoat) {
+			if (Input.GetKey(KeyCode.Space)) {
+				this.transform.localPosition = jumpOffPosition;
+				isOnBoat = false;
+				TimerScript.setStartTimer(true);
+			}
+		}
+
 		// Updates "Forward" key movement
 		if (Input.GetKey(KeyCode.W)) {
 			this.transform.localPosition += transform.forward * playerSpeed * Time.deltaTime;
