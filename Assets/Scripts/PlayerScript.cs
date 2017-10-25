@@ -10,7 +10,6 @@ public class PlayerScript : MonoBehaviour {
 	private readonly static float defaultCameraSpeed = 400F;
 
 	private bool isOnBoat = true;
-	private readonly float boatSpeed = 20f;
 
 	private Vector3 jumpOffPosition = new Vector3 (-104.6f, 0f, -30f);
 
@@ -38,7 +37,7 @@ public class PlayerScript : MonoBehaviour {
 		// Sets the default player & camera speed.
 		setPlayerSpeed(defaultPlayerSpeed);
 		setCameraSpeed(defaultCameraSpeed);
-		//print(this.transform.localPosition);
+
 	}
 
 	// Check item effects before checking player movement.
@@ -47,27 +46,6 @@ public class PlayerScript : MonoBehaviour {
 		ItemManager.checkItems ();
 		playerMovement ();
 
-		/*
-		if (isOnBoat) {
-			 
-			//this.transform.localPosition += transform.forward * boatSpeed * Time.deltaTime;
-			if (Input.GetKey(KeyCode.Space)) {
-				this.transform.localPosition = jumpOffPosition;
-
-				isOnBoat = false;
-			}
-			playerMovement ();
-		} else {
-			
-			ItemManager.checkItems ();
-			playerMovement ();
-
-		}
-
-		if (this.transform.localPosition == ParkingFlag.getPosition) {
-			isOnBoat = false;
-		}
-		*/
 	}
 
 	/*
